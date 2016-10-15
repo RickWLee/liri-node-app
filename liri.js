@@ -1,14 +1,14 @@
 var Twitter = require('twitter');
 var twittkey = require('./keys.js');
 
-console.log(twittkey.twitterKeys);
+// console.log(twittkey.twitterKeys);
 var keys = twittkey.twitterKeys;
 // console.log(keys);
 var client = new Twitter(keys);
 // console.log(client);
 var params = {screen_name: 'nodejs'};
 
-console.log("Go grab my tweets");
+// console.log("Go grab my tweets");
 
 // client.get('statuses/user_timeline', params, function(error, tweets, response) {
 //   if (!error) {
@@ -40,4 +40,22 @@ var getTweets = function() {
     });
 }
 
+
+var spotify = require('spotify');
+
+var getSpot= function(){
+spotify.search({ type: 'track', query: 'Open arms' }, function(err, data) {
+    if ( err ) {
+        console.log('Error occurred: ' + err);
+        return;
+    }
+    console.log(data);
+
+ 
+    // Do something with 'data' 
+});
+
+}
+
+getSpot();
 // getTweets();
